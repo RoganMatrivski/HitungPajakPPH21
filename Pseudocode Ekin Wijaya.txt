@@ -1,0 +1,71 @@
+Start
+
+method HitungPPH21(){
+
+Declare Nama_Karyawan,Kawin=Char
+		gaji,gaji_kotor,gaji_setahun,jamin_kecelakaan_kerja,jamin_kesehatan,biaya_jabatan,jamin_hari_tua,jamin_pensiun,pengurangan,neto,ptkp,status=Int
+Input Nama Karyawan,Kawin,Gaji,Tunjangan
+Calculate Gaji_setahun=gaji*12
+		biaya_jabatan=0.05*gaji
+		jamin_kecelakaan_kerja=0.24/100*gaji
+		jamin_kesehatan=0.3/100*gaji
+		jamin_hari_tua=0.02*gaji   
+		jamin_pensiun=0.01*gaji
+		Gaji_bruto=gaji_setahun+tunjangan+jamin_kecelakaan_kerja+jamin_kesehatan
+If Kawin is no and status is 0 then ptkp is 54000000 else
+If Kawin is no and status is 1 then ptkp is 58500000 else
+If Kawin is no and status is 2 then ptkp is 63000000 else
+If Kawin is no and status is 3 then ptkp is 67500000 else
+If Kawin is yes and status is 0 then ptkp is 58500000 else
+If Kawin is yes and status is 1 then ptkp is 63000000 else
+If Kawin is yes and status is 2 then ptkp is 67500000 else
+If Kawin is yes and status is 3 then ptkp is 72000000 else
+If Kawin is yes_both and status is 0 then ptkp is 112500000 else
+If Kawin is yes_both and status is 1 then ptkp is 117000000 else
+If Kawin is yes_both and status is 2 then ptkp is 121500000 else
+If Kawin is yes_both and status is 3 then ptkp is 126000000 
+	endif
+		Pengurangan=biaya_jabatan+jamin_hari_tua+jamin_pensiun+ptkp  
+		Neto=Gaji_bruto-pengurangan
+		
+if neto is below 500000000 then
+	Tarif_Pajak = Tarif_Pajak * 5%
+
+if neto is below 250000000 then
+	Tarif_Pajak = (Tarif_Pajak - 50000000) * 15%
+	
+if neto is below 500000000 then
+	Tarif_Pajak = (Tarif_Pajak - 250000000) * 25%
+	
+if neto is above 500000000 then
+	Tarif_Pajak = (Tarif_Pajak - 500000000) * 3%
+
+	endif
+		PPH21_Setahun=Neto*Tarif_Pajak
+		PPH21_Bulan=PPH21_Setahun/12
+If next then start over else end the program
+	endif
+	
+}
+
+declare int count = 0, rowLimit = 15
+
+while not end of file {
+	printHeader
+	
+	while not end of department{
+		while count < rowLimit{
+			int jumlahPPH21 = hitungPPH21()
+			print(number + " " + name + " " + gajiPokok + " " + Tunjangan + " " + bulanMasuk + " " + jumlahPPH21
+			count = cunt + 1;
+		}
+		
+		addSpace
+		
+		count = 0
+		
+		printHeader
+	}
+	
+	addSpace
+}

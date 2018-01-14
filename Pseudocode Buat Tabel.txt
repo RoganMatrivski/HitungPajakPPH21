@@ -1,0 +1,51 @@
+==================================================================================
+No.	Nama				Gaji Pokok		Tunjangan		Bulan Masuk		PPH 21	
+==================================================================================
+1	Ucup				1.000.000.000	200.000.000		Maret 1975		222.232.232
+2	Udin				1.000.000.000	200.000.000		Maret 1964		222.232.232
+3	Ekin				1.000.000.000	200.000.000		Maret 1998		222.232.232
+
+
+deklarasi int hitung = 0, batasBaris = 15
+
+sementara belum mencapai ujung file {
+	printKepala
+	
+	sementara belum mencapai ujung departemen{
+		sementara hitung belum melebihi batasBaris{
+			jumlahPPH21 = hitungPPH21()
+			print(number + " " + name + " " + gajiPokok + " " + Tunjangan + " " + bulanMasuk + " " + jumlahPPH21
+			hitung = hitung + 1;
+		}
+		
+		beriJarak
+		
+		hitung = 0
+		
+		printKepala
+	}
+	
+	beriJarak
+}
+
+declare int count = 0, rowLimit = 15
+
+while not end of file {
+	printHeader
+	
+	while not end of department{
+		while count < rowLimit{
+			int jumlahPPH21 = hitungPPH21()
+			print(number + " " + name + " " + gajiPokok + " " + Tunjangan + " " + bulanMasuk + " " + jumlahPPH21
+			count = cunt + 1;
+		}
+		
+		addSpace
+		
+		count = 0
+		
+		printHeader
+	}
+	
+	addSpace
+}
