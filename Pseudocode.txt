@@ -1,0 +1,75 @@
+==================================================================================================================
+THIS PROPERTY IS OWNED BY ROBIN MAURITZ LANGUJU WITH AN ALIAS AS ROGAN MATRIVSKI LARTENGALF
+
+DO NOT ATTEMPT TO USE THIS FOR YOUR TEST. I'M SERIOUS.
+==================================================================================================================
+
+deklarasi gajiPokok, tunjanganLainnya, jaminanKeselamatanKerja, jaminanKematian, gajiBruto, biayaJabatan, iuranJaminanHariTua, jaminanPensiun, jumlahPengurang, gajiBersih, gajiBersihSetahun, penghasilanTidakKenaPajak, penghasilanKenaPajak, penghasilanKenaPajakDibulatkan, pajakDikenakanSetahun, pajakDikenakanSebulan, PTKPKawin, statusKawin, jumlahAnak;
+
+Print("Masukkan Gaji Pokok Anda.");
+Input(gajiPokok);
+
+Print("Masukkan Total Tunjangan Anda.");
+Input(tunjanganLainnya);
+
+//jaminanKeselamatanKerja = gajiPokok * 0.0024;
+//jaminanKematian = gajiPokok * 0.003;
+
+gajiBruto = gajiPokok + tunjanganLainnya; // + jaminanKeselamatanKerja + jaminanKematian;
+
+biayaJabatan = gajiBruto * 0.05;
+iuranJaminanHariTua = gajiPokok * 0.02;
+jaminanPensiun = gajiPokok * 0.01;
+
+jumlahPengurang = biayaJabatan + iuranJaminanHariTua + jaminanPensiun;
+
+gajiBersih = gajiBruto - jumlahPengurang;
+
+gajiBersihSetahun = gajiBersih * 12;
+
+Print("Sebutkan Status anda.");
+Print("1. Tidak Kawin");
+Print("2. Kawin");
+Print("3. Kawin dan Penghasilan Suami/Istri Digabung.");
+Input(statusKawin);
+
+Print("Sebutkan Berapa Jumlah Anak Anda.");
+Input(jumlahAnak);
+
+jika (jumlahAnak > 3) maka
+{
+	jumlahAnak = 3;
+}
+
+jika (statusKawin = 1) maka{
+	PTKPKawin = 54000000;
+}
+jika (statusKawin = 2) maka{
+	PTKPKawin = 58500000;
+}
+jika (statusKawin = 3) maka{
+	PTKPKawin = 108000000;
+}
+
+penghasilanTidakKenaPajak = PTKPKawin + (jumlahAnak * 4500000);
+
+penghasilanKenaPajak = gajiBersihSetahun - penghasilanTidakKenaPajak;
+
+penghasilanKenaPajakDibulatkan = roundToThousands(penghasilanKenaPajak);
+
+jika (penghasilanKenaPajakDibulatkan <= 50000000) maka
+	pajakDikenakanSetahun = penghasilanKenaPajakDibulatkan * 0.05;
+
+jika (penghasilanKenaPajakDibulatkan <= 250000000) maka
+	pajakDikenakanSetahun = (penghasilanKenaPajakDibulatkan - 50000000) * 0.15;
+
+jika (penghasilanKenaPajakDibulatkan <= 500000000) maka
+	pajakDikenakanSetahun = (penghasilanKenaPajakDibulatkan - 250000000) * 0.25;
+
+jika (penghasilanKenaPajakDibulatkan > 500000000) maka
+	pajakDikenakanSetahun = (penghasilanKenaPajakDibulatkan - 50000000) * 0.30;
+
+pajakDikenakanSebulan = pajakDikenakanSetahun / 12;
+
+Print("Pajak anda dalam sebulan dan setahun secara berurutan adalah {0} dan {1}. Sementara PTKP anda adalah {2}", pajakDikenakanSebulan, pajakDikenakanSetahun, penghasilanTidakKenaPajak);
+
