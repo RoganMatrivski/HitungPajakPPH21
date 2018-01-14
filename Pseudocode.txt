@@ -4,12 +4,12 @@ THIS PROPERTY IS OWNED BY ROBIN MAURITZ LANGUJU WITH AN ALIAS AS ROGAN MATRIVSKI
 DO NOT ATTEMPT TO USE THIS FOR YOUR TEST. I'M SERIOUS.
 ==================================================================================================================
 
+meteode HitungPPH21()
+
 deklarasi gajiPokok, tunjanganLainnya, jaminanKeselamatanKerja, jaminanKematian, gajiBruto, biayaJabatan, iuranJaminanHariTua, jaminanPensiun, jumlahPengurang, gajiBersih, gajiBersihSetahun, penghasilanTidakKenaPajak, penghasilanKenaPajak, penghasilanKenaPajakDibulatkan, pajakDikenakanSetahun, pajakDikenakanSebulan, PTKPKawin, statusKawin, jumlahAnak;
 
-Print("Masukkan Gaji Pokok Anda.");
 Input(gajiPokok);
 
-Print("Masukkan Total Tunjangan Anda.");
 Input(tunjanganLainnya);
 
 //jaminanKeselamatanKerja = gajiPokok * 0.0024;
@@ -27,13 +27,8 @@ gajiBersih = gajiBruto - jumlahPengurang;
 
 gajiBersihSetahun = gajiBersih * 12;
 
-Print("Sebutkan Status anda.");
-Print("1. Tidak Kawin");
-Print("2. Kawin");
-Print("3. Kawin dan Penghasilan Suami/Istri Digabung.");
 Input(statusKawin);
 
-Print("Sebutkan Berapa Jumlah Anak Anda.");
 Input(jumlahAnak);
 
 jika (jumlahAnak > 3) maka
@@ -51,7 +46,7 @@ jika (statusKawin = 3) maka{
 	PTKPKawin = 108000000;
 }
 
-penghasilanTidakKenaPajak = PTKPKawin + (jumlahAnak * 4500000);
+penghasilanTidakKenaPajak = PTKPKawin + (jumlahAnak * 450	0000);
 
 penghasilanKenaPajak = gajiBersihSetahun - penghasilanTidakKenaPajak;
 
@@ -70,6 +65,4 @@ jika (penghasilanKenaPajakDibulatkan > 500000000) maka
 	pajakDikenakanSetahun = (penghasilanKenaPajakDibulatkan - 50000000) * 0.30;
 
 pajakDikenakanSebulan = pajakDikenakanSetahun / 12;
-
-Print("Pajak anda dalam sebulan dan setahun secara berurutan adalah {0} dan {1}. Sementara PTKP anda adalah {2}", pajakDikenakanSebulan, pajakDikenakanSetahun, penghasilanTidakKenaPajak);
 
