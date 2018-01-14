@@ -57,7 +57,7 @@ while not end of file {
 		while count < rowLimit{
 			int jumlahPPH21 = hitungPPH21()
 			print(number + " " + name + " " + gajiPokok + " " + Tunjangan + " " + bulanMasuk + " " + jumlahPPH21
-			count = cunt + 1;
+			count = count + 1;
 		}
 		
 		addSpace
