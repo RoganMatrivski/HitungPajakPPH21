@@ -49,3 +49,9 @@ while not end of file {
 	
 	addSpace
 }
+
+method printHeader(){
+	print("==================================================================================")
+	print("No.	Nama				Gaji Pokok		Tunjangan		Bulan Masuk		PPH 21	 ")
+	print("==================================================================================")
+}

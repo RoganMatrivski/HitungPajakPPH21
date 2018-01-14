@@ -52,20 +52,19 @@ declare int count = 0, rowLimit = 15
 
 while not end of file {
 	printHeader
-	
 	while not end of department{
 		while count < rowLimit{
 			int jumlahPPH21 = hitungPPH21()
 			print(number + " " + name + " " + gajiPokok + " " + Tunjangan + " " + bulanMasuk + " " + jumlahPPH21
 			count = count + 1;
-		}
-		
 		addSpace
-		
 		count = 0
-		
-		printHeader
-	}
-	
+		printHeaderaddSpace
 	addSpace
+}
+
+method printHeader(){
+	print("==================================================================================")
+	print("No.	Nama				Gaji Pokok		Tunjangan		Bulan Masuk		PPH 21	 ")
+	print("==================================================================================")
 }
