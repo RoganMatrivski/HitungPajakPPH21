@@ -55,13 +55,13 @@ penghasilanKenaPajakDibulatkan = roundToThousands(penghasilanKenaPajak);
 jika (penghasilanKenaPajakDibulatkan <= 50000000) maka
 	pajakDikenakanSetahun = penghasilanKenaPajakDibulatkan * 0.05;
 
-jika (penghasilanKenaPajakDibulatkan <= 250000000) maka
+jika (penghasilanKenaPajakDibulatkan <= 250000000 dan > 50000000) maka
 	pajakDikenakanSetahun = (penghasilanKenaPajakDibulatkan - 50000000) * 0.15;
 
-jika (penghasilanKenaPajakDibulatkan <= 500000000) maka
+jika (penghasilanKenaPajakDibulatkan <= 500000000 dan > 250000000) maka
 	pajakDikenakanSetahun = (penghasilanKenaPajakDibulatkan - 250000000) * 0.25;
 
-jika (penghasilanKenaPajakDibulatkan > 500000000) maka
+jika (penghasilanKenaPajakDibulatkan > 500000000 dan > 500000000) maka
 	pajakDikenakanSetahun = (penghasilanKenaPajakDibulatkan - 50000000) * 0.30;
 
 pajakDikenakanSebulan = pajakDikenakanSetahun / 12;
